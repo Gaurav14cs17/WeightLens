@@ -10,9 +10,15 @@ Visual comparison tool for neural network model weights — analyze quantization
 
 The landing page provides quick access to all tools. Choose between **Architecture Viewer** (single model graph) or **Weight Comparison** (multi-model analysis). The dashboard adapts to your preferred theme — dark or light — saved automatically across sessions.
 
-| Dark Mode | Light Mode |
-|-----------|------------|
-| ![Dashboard Dark](screenshots/01-dashboard-dark.png) | ![Dashboard Light](screenshots/02-dashboard-light.png) |
+<p align="center">
+  <img src="screenshots/01-dashboard-dark.png" width="100%" alt="Dashboard Dark Mode">
+</p>
+<p align="center"><em>Dark Mode</em></p>
+
+<p align="center">
+  <img src="screenshots/02-dashboard-light.png" width="100%" alt="Dashboard Light Mode">
+</p>
+<p align="center"><em>Light Mode</em></p>
 
 ---
 
@@ -28,9 +34,15 @@ Upload any ONNX model and instantly visualize its full computation graph as an i
 - Toggle fold/collapse options to simplify complex graphs
 - Export or screenshot the rendered architecture for documentation
 
-| Upload Page | Full Graph View |
-|-------------|-----------------|
-| ![Architecture Upload](screenshots/03-architecture-viewer.png) | ![Graph View](screenshots/05-graph-view.png) |
+<p align="center">
+  <img src="screenshots/03-architecture-viewer.png" width="100%" alt="Architecture Viewer Upload Page">
+</p>
+<p align="center"><em>Upload Page — drag & drop any model file</em></p>
+
+<p align="center">
+  <img src="screenshots/05-graph-view.png" width="100%" alt="Full Graph View">
+</p>
+<p align="center"><em>Full Graph View — interactive DAG with color-coded operations</em></p>
 
 ---
 
@@ -38,9 +50,15 @@ Upload any ONNX model and instantly visualize its full computation graph as an i
 
 Click any node in the graph to open the details sidebar. Inspect every property — operation type, input/output tensors, weight dimensions, data types, attributes, and raw values. Zoom into specific regions of the graph for precise inspection.
 
-| Node Properties Panel | Zoomed Graph Region |
-|-----------------------|---------------------|
-| ![Node Sidebar](screenshots/07-node-sidebar.png) | ![Graph Zoomed](screenshots/06-graph-zoomed.png) |
+<p align="center">
+  <img src="screenshots/07-node-sidebar.png" width="100%" alt="Node Properties Sidebar">
+</p>
+<p align="center"><em>Node Properties Panel — full tensor info, attributes, and data types</em></p>
+
+<p align="center">
+  <img src="screenshots/06-graph-zoomed.png" width="100%" alt="Graph Zoomed View">
+</p>
+<p align="center"><em>Zoomed Graph Region — inspect specific layers in detail</em></p>
 
 ---
 
@@ -62,13 +80,25 @@ Load two or more models side-by-side to compare their weights layer-by-layer. Th
 - Statistical distance metrics (KL divergence, Wasserstein, RMSE) for each layer
 - Layer-by-layer navigation with Prev/Next controls and position indicator
 
-| Upload Multiple Models | Comparison Dashboard (Charts + Health Scores) |
-|------------------------|-----------------------------------------------|
-| ![Quantization Upload](screenshots/04-quantization-upload.png) | ![Quantization Graph](screenshots/08-quantization-graph.png) |
+<p align="center">
+  <img src="screenshots/04-quantization-upload.png" width="100%" alt="Upload Multiple Models">
+</p>
+<p align="center"><em>Upload Multiple Models — select baseline and comparison variants</em></p>
 
-| Layer Navigation + Weight Details | Compare Toolbar |
-|-----------------------------------|-----------------|
-| ![Quantization Details](screenshots/09-quantization-details.png) | ![Compare Navigation](screenshots/10-compare-navigation.png) |
+<p align="center">
+  <img src="screenshots/08-quantization-graph.png" width="100%" alt="Comparison Dashboard">
+</p>
+<p align="center"><em>Comparison Dashboard — charts, health scores, and distribution overlays</em></p>
+
+<p align="center">
+  <img src="screenshots/09-quantization-details.png" width="100%" alt="Layer Navigation and Weight Details">
+</p>
+<p align="center"><em>Layer Navigation + Weight Details — per-layer deep dive</em></p>
+
+<p align="center">
+  <img src="screenshots/10-compare-navigation.png" width="100%" alt="Compare Toolbar">
+</p>
+<p align="center"><em>Compare Toolbar — switch chart types, navigate layers</em></p>
 
 ---
 
@@ -98,13 +128,25 @@ Visualize weight differences using multiple statistical views:
 
 For large models (e.g. Qwen 0.5B with 500+ nodes), the graph engine automatically groups operations by their logical block structure (e.g. `model/layers.0/self_attn`, `model/layers.1/mlp`). Each collapsed block shows the operation count inside it. Blocks can be expanded/collapsed individually or all at once — making transformer architectures with 24+ identical layers navigable.
 
-| Collapsed Blocks Overview | Block Node Properties |
-|---------------------------|----------------------|
-| ![Collapsed Overview](screenshots/14-collapsed-overview.png) | ![Block Details](screenshots/16-block-details.png) |
+<p align="center">
+  <img src="screenshots/14-collapsed-overview.png" width="100%" alt="Collapsed Blocks Overview">
+</p>
+<p align="center"><em>Collapsed Blocks Overview — entire Qwen 0.5B model in one screen</em></p>
 
-| Collapsed Zoomed View | Full Expanded Architecture |
-|-----------------------|----------------------------|
-| ![Collapsed Zoomed](screenshots/15-collapsed-zoomed.png) | ![Full Architecture](screenshots/21-collapse-disabled.png) |
+<p align="center">
+  <img src="screenshots/16-block-details.png" width="100%" alt="Block Node Properties">
+</p>
+<p align="center"><em>Block Node Properties — click to see operations inside each block</em></p>
+
+<p align="center">
+  <img src="screenshots/15-collapsed-zoomed.png" width="100%" alt="Collapsed Zoomed View">
+</p>
+<p align="center"><em>Collapsed Zoomed View — individual block inspection</em></p>
+
+<p align="center">
+  <img src="screenshots/21-collapse-disabled.png" width="100%" alt="Full Expanded Architecture">
+</p>
+<p align="center"><em>Full Expanded Architecture — all blocks unfolded</em></p>
 
 ---
 
@@ -112,9 +154,15 @@ For large models (e.g. Qwen 0.5B with 500+ nodes), the graph engine automaticall
 
 Detects consecutive identical operations in the graph (e.g. three Conv layers with the same parameters) and folds them into a single node with a multiplier badge (Conv×3). Toggle folding on/off from the Architecture Viewer to switch between compact and detailed views.
 
-| Fold Enabled (Compact) | Fold Disabled (All Ops Visible) |
-|-------------------------|----------------------------------|
-| ![Fold Enabled](screenshots/12-fold-enabled.png) | ![Fold Disabled](screenshots/13-fold-disabled.png) |
+<p align="center">
+  <img src="screenshots/12-fold-enabled.png" width="100%" alt="Fold Enabled">
+</p>
+<p align="center"><em>Fold Enabled — repeated operations collapsed with multiplier badge</em></p>
+
+<p align="center">
+  <img src="screenshots/13-fold-disabled.png" width="100%" alt="Fold Disabled">
+</p>
+<p align="center"><em>Fold Disabled — all individual operations visible</em></p>
 
 ---
 
@@ -137,7 +185,10 @@ For layers with multiple parameters (e.g. Conv has both weight and bias), both a
 
 Full dark and light theme support with a single-click toggle. Theme preference is persisted in localStorage. Every element adapts — graph nodes, edges, sidebar, toolbar, upload pages, and charts.
 
-![Graph in Light Mode](screenshots/11-graph-light.png)
+<p align="center">
+  <img src="screenshots/11-graph-light.png" width="100%" alt="Graph in Light Mode">
+</p>
+<p align="center"><em>Light Theme — full graph view with light color scheme</em></p>
 
 ---
 
