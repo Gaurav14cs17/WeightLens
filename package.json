@@ -1,0 +1,114 @@
+{
+  "name": "weightlens",
+  "version": "1.0.0",
+  "description": "Professional model weight comparison & analysis toolkit",
+  "author": {
+    "name": "WeightLens Team",
+    "email": "weightlens@example.com"
+  },
+  "homepage": "https://github.com/weightlens/weightlens",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weightlens/weightlens.git"
+  },
+  "license": "MIT",
+  "main": "src/core/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "electron .",
+    "dev": "python3 serve.py",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "build:win": "electron-builder --win",
+    "build:all": "electron-builder --mac --linux --win",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.0",
+    "puppeteer-core": "^25.1.0"
+  },
+  "build": {
+    "appId": "com.weightlens.app",
+    "productName": "WeightLens",
+    "copyright": "Copyright © 2024-2026 WeightLens Team",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "!src/test_models/**",
+      "!src/**/*.map"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "src/assets/icon.png",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "darkModeSupport": true
+    },
+    "dmg": {
+      "artifactName": "WeightLens-${version}-${arch}.dmg",
+      "title": "WeightLens ${version}"
+    },
+    "linux": {
+      "icon": "src/assets/icon.png",
+      "category": "Development",
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ],
+      "desktop": {
+        "Name": "WeightLens",
+        "Comment": "Model weight comparison & analysis toolkit",
+        "Categories": "Development;Science"
+      }
+    },
+    "deb": {
+      "artifactName": "WeightLens-${version}-${arch}.deb"
+    },
+    "rpm": {
+      "artifactName": "WeightLens-${version}-${arch}.rpm"
+    },
+    "win": {
+      "icon": "src/assets/icon.png",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "WeightLens-Setup-${version}.exe"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "weightlens",
+      "repo": "weightlens"
+    }
+  }
+}
